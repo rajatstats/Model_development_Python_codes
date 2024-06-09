@@ -1,4 +1,5 @@
 ﻿# Python_codes_for_univariate_analysis
+ 
 1. Linear Regression
 2. Logistic Regression
    - L1 or L2 regularization parameter
