@@ -21,14 +21,15 @@
     * Same parameter as Decision tree
     * learning_rate (Values lies between 0 to 1. Correction to be added by a new tree in the model)
     * gamma (Minimum loss reduction required to make a further splitting on leaf node.Prevents overfitting and puts Regularization parameter. Higher value less will be overfitting (0,inf))
-9. Light GBM 
+10. Light GBM 
     * Gradient Based one side sampling (GOSS)
     * Exclusive feature bundling
     * Histogram based binning of continuous variable.
     * Leaf wise splitting of tree node.
-10. CatBoost algorithm
-    Types of features can be used in CatBoost algorithm: -
-         ** Text Feature
+11. CatBoost algorithm
+    * Types of features can be used in CatBoost algorithm: -
+     list-style-type: circle;
+    ** Text Feature
          ** Categorical Feature
          ** Numerical Feature
     CatBoost tries to derive maximum information from limited data: -
