@@ -27,10 +27,10 @@
     * Histogram based binning of continuous variable.
     * Leaf wise splitting of tree node.
 11. CatBoost algorithm
-    - Types of features can be used in CatBoost algorithm: -
-    * Text Feature
-    * Categorical Feature
-    * Numerical Feature
-    - CatBoost tries to derive maximum information from limited data: -
-    * Tends to perform good for small size of data
-    * More categorical feature better the model performance.
+   - Types of features can be used in CatBoost algorithm: -
+      * Text Feature
+      * Categorical Feature
+      * Numerical Feature
+   - CatBoost tries to derive maximum information from limited data: -
+      * Tends to perform good for small size of data
+      * More categorical feature better the model performance.
