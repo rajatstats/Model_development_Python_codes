@@ -19,11 +19,18 @@
     * splitting rule
 8. XGBoost
     * Same parameter as Decision tree
-    * Regularization parameter
-9. Light GBM
-    * Gradient Based one side sampling
-    * Exclusive feature binning
-
-```python
-import pandas as pd
-```
+    * learning_rate (Values lies between 0 to 1. Correction to be added by a new tree in the model)
+    * gamma (Minimum loss reduction required to make a further splitting on leaf node.Prevents overfitting and puts Regularization parameter. Higher value less will be overfitting (0,inf))
+9. Light GBM 
+    * Gradient Based one side sampling (GOSS)
+    * Exclusive feature bundling
+    * Histogram based binning of continuous variable.
+    * Leaf wise splitting of tree node.
+10. CatBoost algorithm
+    Types of features can be used in CatBoost algorithm: -
+       * Text Feature
+       * Categorical Feature
+       * Numerical Feature
+    CatBoost tries to derive maximum information from limited data: -
+    * Tends to perform good for small size of data
+    * More categorical feature better the model performance.
