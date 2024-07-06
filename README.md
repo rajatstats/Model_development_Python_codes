@@ -1,4 +1,4 @@
-﻿# Python_codes_for_univariate_analysis
+﻿# Machine Learning Model
  
 1. Linear Regression
 2. Logistic Regression
