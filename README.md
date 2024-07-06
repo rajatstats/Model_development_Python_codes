@@ -21,6 +21,9 @@
    - penalty: {‘l1’, ‘l2’, ‘elasticnet’, None}, default='l2'
    - C: any positive values, default=1.0. Smaller values specify stronger regularization.
 
+```python
+class sklearn.linear_model.LogisticRegression(penalty='l2', *, dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_weight=None, random_state=None, solver='lbfgs', max_iter=100, multi_class='deprecated', verbose=0, warm_start=False, n_jobs=None, l1_ratio=None)[source]
+```
    Different Methods for tunning the hyperparameter of Logistic regression
    - GridSearchCV
    - Randomised Search CV
