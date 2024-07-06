@@ -29,9 +29,9 @@
    ```
    Different Methods for tunning the hyperparameter of Logistic regression
    - GridSearchCV
-   - Randomised Search CV
+   - RandomisedSearchCV
    
-   **Classification threshold for binary class classification can be selected using AUROC curve where there is maximum difference between False positive rate (FPR) and True Positive Rate**
+   **Classification threshold for binary class classification can be selected using AUROC curve where there is maximum difference between False positive rate (FPR) and True Positive Rate (TPR)**
    Performace Metrics for final model on train and test dataset
    - AUC
    - KS
