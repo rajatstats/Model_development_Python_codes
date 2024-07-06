@@ -2,31 +2,70 @@
  
 1. Linear Regression
 2. Logistic Regression
-   - L1 or L2 regularization parameter
-   - Threshold for the classificaiton
-3. SVM (Support Vector Machine)
+
+   Overview:
+   Can be used for binary classification and multi class classification modelling purpose.
+
+   Model Assumptions: -
+   - Classes are linearly separable
+   - Multicollinearlity not present between the feature variables.
+   
+   Advantages:
+   - Good to use for linearly separable class.
+
+   Disadvantages:
+   - Not fit to use for non-linear separable class.
+   
+   Hyperparameter for logistic regression.
+   - solver: {‘lbfgs’, ‘liblinear’, ‘newton-cg’, ‘newton-cholesky’, ‘sag’, ‘saga’}, default=’lbfgs’
+   - penalty: {‘l1’, ‘l2’, ‘elasticnet’, None}, default='l2'
+   - C: any positive values, default=1.0. Smaller values specify stronger regularization.
+
+   Different Methods for tunning the hyperparameter of Logistic regression
+   - GridSearchCV
+   - Randomised Search CV
+   
+   **Classification threshold for binary class classification can be selected using AUROC curve where there is maximum difference between False positive rate (FPR) and True Positive Rate**
+   Performace Metrics for final model on train and test dataset
+   - AUC
+   - KS
+   - Precision
+   - Recall
+     
+4. SVM (Support Vector Machine)
    - Kernel ( Radial or other non linear or liner kernel)
-4. Decision Tree (CART (Classification and regression tree)
+     
+5. Decision Tree (CART (Classification and regression tree)
+
+   Overview:
+   Can be used for both classification and regression modelling purpose.
+   
    - Entropy of each node (Parent, Child, leaf node)
    - Information Gain 
    - Gini Impuriy of each node
-5. Random Forest
+
+   Hyperparameter of model:
+   - max_depth
+   - min_child_weight
+   - split_criteria
+   - 
+7. Random Forest
    - Number of tree
    - Depth of tree
    - node size (Minimum number of observation in terminal node)
    - sample size (Proportion of sample to be drawn for each tree)
    - feature size (Number of features to randomly drawn for each tree)
    - splitting rule
-6. XGBoost
+8. XGBoost
    - Same parameter as Decision tree
    - learning_rate (Values lies between 0 to 1. Correction to be added by a new tree in the model)
    - gamma (Minimum loss reduction required to make a further splitting on leaf node.Prevents overfitting and puts Regularization parameter. Higher value less will be overfitting (0,inf))
-7. Light GBM
+9. Light GBM
    - Gradient Based one side sampling (GOSS)
    - Exclusive feature bundling
    - Histogram based binning of continuous variable.
    - Leaf wise splitting of tree node.
-8. CatBoost algorithm
+10. CatBoost algorithm
    - Types of features can be used in CatBoost algorithm: -
       - Text Feature
       - Categorical Feature
