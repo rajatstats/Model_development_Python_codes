@@ -1,86 +1,66 @@
-﻿# Machine Learning Model
- 
-1. Linear Regression
-2. Logistic Regression
+# Overview of Logistic regression model.
 
-   Overview:
-   Can be used for binary classification and multi class classification modelling purpose.
+The logistic regression model, also known as the logit model, estimates the probability of an event occurring based on a given dataset of independent variables. It’s commonly used for classification and predictive analytics.
 
-   Model Assumptions: -
-   - Classes are linearly separable
-   - Multicollinearlity not present between the feature variables.
-   
-   Advantages:
-   - Good to use for linearly separable class.
 
-   Disadvantages:
-   - Not fit to use for non-linear separable class.
-   
-   Hyperparameter for logistic regression.
-   - solver: {‘lbfgs’, ‘liblinear’, ‘newton-cg’, ‘newton-cholesky’, ‘sag’, ‘saga’}, default=’lbfgs’
-   - penalty: {‘l1’, ‘l2’, ‘elasticnet’, None}, default='l2'
-   - C: any positive values, default=1.0. Smaller values specify stronger regularization.
+1. Linear Combination: Logistic regression models the log-odds of an event as a linear combination of one or more independent variables. The coefficients in this linear combination represent the parameters of the model.
 
-   **Python Code**
-   ```python
-   class sklearn.linear_model.LogisticRegression(penalty='l2', *, dual=False, tol=0.0001, C=1.0, fit_intercept=True,
-   intercept_scaling=1, class_weight=None, random_state=None, solver='lbfgs', max_iter=100, multi_class='deprecated',
-   verbose=0, warm_start=False, n_jobs=None, l1_ratio=None)
-   ```
-   Different Methods for tunning the hyperparameter of Logistic regression
-   - GridSearchCV
-   - RandomisedSearchCV
-   
-   **Classification threshold for binary class classification can be selected using AUROC curve where there is maximum difference between False positive rate (FPR) and True Positive Rate (TPR)**
-   Performace Metrics for final model on train and test dataset
-   - AUC
-   - KS
-   - Precision
-   - Recall
-     
-4. SVM (Support Vector Machine)
-   - Kernel ( Radial or other non linear or liner kernel)
-     
-5. Decision Tree (CART (Classification and regression tree)
 
-   Overview:
-   Can be used for both classification and regression modelling purpose.
-   
-   - Entropy of each node (Parent, Child, leaf node)
-   - Information Gain 
-   - Gini Impuriy of each node
+2. Logistic Function: To convert the linear combination into a probability, logistic regression uses the logistic function (also called the sigmoid function). This function maps any real-valued set of input variables to a value between 0 and 12. The logistic function is defined as:\
+$$ 
+P(Y=1)=\frac{1}{1+e^{-z}} 
+$$​
+where:
+* (P(Y=1)) is the probability of the event occurring.
+* (z) is the linear combination of independent variables.
 
-   Hyperparameter of model:
-   - max_depth
-   - min_child_weight
-   - split_criteria
-   - 
-7. Random Forest
-   - Number of tree
-   - Depth of tree
-   - node size (Minimum number of observation in terminal node)
-   - sample size (Proportion of sample to be drawn for each tree)
-   - feature size (Number of features to randomly drawn for each tree)
-   - splitting rule
-8. XGBoost
-   - Same parameter as Decision tree
-   - learning_rate (Values lies between 0 to 1. Correction to be added by a new tree in the model)
-   - gamma (Minimum loss reduction required to make a further splitting on leaf node.Prevents overfitting and puts Regularization parameter. Higher value less will be overfitting (0,inf))
-9. Light GBM
-   - Gradient Based one side sampling (GOSS)
-   - Exclusive feature bundling
-   - Histogram based binning of continuous variable.
-   - Leaf wise splitting of tree node.
-10. CatBoost algorithm
-   - Types of features can be used in CatBoost algorithm: -
-      - Text Feature
-      - Categorical Feature
-      - Numerical Feature
-   - CatBoost tries to derive maximum information from limited data: -
-      - Tends to perform good for small size of data
-      - More categorical feature better the model performance
-**The Cauchy-Schwarz Inequality**
+3. Binary Dependent Variable: In binary logistic regression, there’s a single binary dependent variable (coded as “0” or “1”). The independent variables can be binary or continuous. The logistic model estimates the coefficients that maximize the likelihood of the observed data.
 
-```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+
+4. Classification: Although logistic regression itself doesn’t perform statistical classification, it can be used to create a binary classifier. By choosing a cutoff probability value, we classify inputs as one class if the probability exceeds the cutoff and the other class otherwise1.
+
+
+Remember, logistic regression is a powerful tool for understanding relationships between variables and predicting outcomes
+# Hyperparameter of the logistic regression models.
+Logistic regression models have several hyperparameters that you can tune to improve their performance. Here are some of the key hyperparameters:
+
+1. **Penalty** : This determines the type of regularization to apply. Options include:\
+'l1': L1 regularization (Lasso)\
+'l2': L2 regularization (Ridge)\
+'elasticnet': Combination of L1 and L2\
+None: No regularization\
+2. **C** : This is the inverse of regularization strength. Smaller values specify stronger regularization. It’s a positive float, with the default being 1.0.\
+Solver: The algorithm to use for optimization. Options include:
+    * 'newton-cg'
+    * 'lbfgs'
+    * 'liblinear'
+    * 'sag'
+    * 'saga'
+3. **Max_iter** : The maximum number of iterations taken for the solvers to converge. The default is 100.
+Tol: The tolerance for stopping criteria. The default is {1e-4}.
+4. **Fit_intercept**: Specifies if a constant (bias or intercept) should be added to the decision function. The default is True.
+
+# Python Code for Logistic regression model.
+```python
+class sklearn.linear_model.LogisticRegression(penalty='l2',*,
+ dual=False, 
+ tol=0.0001,
+ C=1.0,
+ fit_intercept=True, 
+ intercept_scaling=1, 
+ class_weight=None, 
+ random_state=None, 
+ solver='lbfgs', 
+ max_iter=100, 
+ multi_class='deprecated', 
+ verbose=0, 
+ warm_start=False, 
+ n_jobs=None, 
+ l1_ratio=None)
 ```
+
+Steps to fit a logistic regression model.
+1. feature selection 
+2. Baseline model fitting with KS AUC Recall Precision results
+3. hyperparameter tunning (Randomized search, Grid Search, Bayesian optimization)
+
